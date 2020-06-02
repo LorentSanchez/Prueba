@@ -1,0 +1,42 @@
+﻿@model Preueba.Web.Models.Owner
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Owner</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreC)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombreC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoC)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonC)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TelefonC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionC)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DireccionC)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DocumentoId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
