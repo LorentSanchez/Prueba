@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba.Common", "Prueba.Common\Prueba.Common.csproj", "{685F8B6E-698E-402F-A706-4EC229B03D9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prueba.Common", "Prueba.Common\Prueba.Common.csproj", "{685F8B6E-698E-402F-A706-4EC229B03D9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Preueba.Web", "Preueba.Web\Preueba.Web.csproj", "{33AA05CB-A2EE-4FA1-8BB0-6705D0F3E326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prueba.Web", "Preueba.Web\Prueba.Web.csproj", "{33AA05CB-A2EE-4FA1-8BB0-6705D0F3E326}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

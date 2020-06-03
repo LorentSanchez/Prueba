@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Preueba.Web.Data.Entities;
 
-namespace Preueba.Web.Migrations
+namespace Prueba.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200601164849_Prueba")]
+    [Migration("20200602221313_Prueba")]
     partial class Prueba
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,9 +22,9 @@ namespace Preueba.Web.Migrations
 
             modelBuilder.Entity("Preueba.Web.Models.Owner", b =>
                 {
-                    b.Property<int>("DocumentoId")
+                    b.Property<int>("OwnerId")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(15)
+                        .HasMaxLength(30)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ApellidoC")
@@ -37,12 +37,13 @@ namespace Preueba.Web.Migrations
 
                     b.Property<string>("NombreC")
                         .IsRequired()
-                        .HasMaxLength(20);
+                        .HasMaxLength(30);
 
-                    b.Property<int>("TelefonC")
+                    b.Property<string>("TelefonC")
+                        .IsRequired()
                         .HasMaxLength(15);
 
-                    b.HasKey("DocumentoId");
+                    b.HasKey("OwnerId");
 
                     b.ToTable("Owners");
                 });

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace Preueba.Web.Models
 {
     public class City
-    {
-        [Required]
-        [Display(Name = "Codigo")]
+    {   
+        [Key]
         public int CityId { get; set; }
+
         [Required]
         [MaxLength(30)]
         [Display(Name = "Ciudad")]
@@ -19,7 +19,7 @@ namespace Preueba.Web.Models
 
         public int StateId { get; set; }
 
-        public State StateNames { get; set; }
+        public State States { get; set; }
 
         public ICollection<Neighborhood> Neighborhoods { get; set; }
 

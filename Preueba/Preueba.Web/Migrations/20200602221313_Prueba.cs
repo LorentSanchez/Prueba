@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Preueba.Web.Migrations
+namespace Prueba.Web.Migrations
 {
     public partial class Prueba : Migration
     {
@@ -11,16 +11,16 @@ namespace Preueba.Web.Migrations
                 name: "Owners",
                 columns: table => new
                 {
-                    DocumentoId = table.Column<int>(maxLength: 15, nullable: false)
+                    OwnerId = table.Column<int>(maxLength: 30, nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    NombreC = table.Column<string>(maxLength: 20, nullable: false),
+                    NombreC = table.Column<string>(maxLength: 30, nullable: false),
                     ApellidoC = table.Column<string>(maxLength: 30, nullable: false),
-                    TelefonC = table.Column<int>(maxLength: 15, nullable: false),
+                    TelefonC = table.Column<string>(maxLength: 15, nullable: false),
                     DireccionC = table.Column<string>(maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Owners", x => x.DocumentoId);
+                    table.PrimaryKey("PK_Owners", x => x.OwnerId);
                 });
         }
 

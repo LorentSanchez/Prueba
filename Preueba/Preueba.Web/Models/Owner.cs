@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prueba.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,10 +10,7 @@ namespace Preueba.Web.Models
     public class Owner
     {
         [Key]
-        [Required]//para que los campos sea obliatorios llenarlos 
-        [MaxLength(30, ErrorMessage = "The field {0} only can contain a maximum {1} characters")]//en tama$o maximo que tendran los campos 
-        [Display(Name = "Identidad")]
-        public int DocumentoId { get; set; }
+        public int OwnerId { get; set; }
         [Required]
         [MaxLength(30, ErrorMessage = "The field {0} only can contain a maximum {1} characters")]
         [Display(Name = "Nombre del cliente ")]
@@ -31,5 +29,8 @@ namespace Preueba.Web.Models
         public string DireccionC { get; set; }
 
         public string NombreCompleto => $"{NombreC} {ApellidoC}";
+
+
+        public ICollection<TypeDocument> TypeDocuments { get; set; }
     }
 }

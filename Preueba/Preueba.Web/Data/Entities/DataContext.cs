@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Prueba.Web.Models;
 
 namespace Preueba.Web.Data.Entities
 {
@@ -15,5 +16,6 @@ namespace Preueba.Web.Data.Entities
 
         }
         public DbSet<Owner> Owners { get; set; }
+        public DbSet<Prueba.Web.Models.Country> Country { get; set; }
     }
 }
