@@ -33,6 +33,10 @@
                 <span asp-validation-for="DireccionC" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="IdDocumet" class="control-label"></label>
+                <select asp-for="IdDocumet" class ="form-control" asp-items="ViewBag.IdDocumet"></select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </form>

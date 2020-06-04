@@ -16,7 +16,6 @@ namespace Prueba.Web.Models
 
 
 
-        public int Employe { get; set; }
-        public Employe Employees { get; set; }
+        public ICollection<Employe> Employes { get; set; }
     }
 }

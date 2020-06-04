@@ -17,5 +17,13 @@ namespace Preueba.Web.Data.Entities
         }
         public DbSet<Owner> Owners { get; set; }
         public DbSet<Prueba.Web.Models.Country> Country { get; set; }
+        
+        public DbSet<Prueba.Web.Models.Brand> Brand { get; set; }
+        public DbSet<Prueba.Web.Models.Articles> Articles { get; set; }
+        public DbSet<Prueba.Web.Models.ClassificationArt> ClassificationArt { get; set; }
+        public DbSet<Prueba.Web.Models.TypeDocument> TypeDocument { get; set; }
+        public DbSet<Preueba.Web.Models.City> City { get; set; }
+        public DbSet<Preueba.Web.Models.Neighborhood> Neighborhood { get; set; }
+        public DbSet<Preueba.Web.Models.State> State { get; set; }
     }
 }

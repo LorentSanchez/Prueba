@@ -15,11 +15,14 @@ namespace Prueba.Web.Models
         [Display(Name ="Articulos")]
         public string ArticlesName { get; set; }
 
-        [Required]
-        [Display(Name ="Tipo De Articulo")]
-        public string TypeArticles { get; set; }
 
-        public ICollection<Brand> Brands { get; set; }
+        public int ArtcId { get; set; }
+
+        public ClassificationArt ClassificationArts { get; set; }
+
+        public int BrandId { get; set; }
+
+        public Brand Brands { get; set; }
 
     }
 }

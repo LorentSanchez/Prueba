@@ -33,7 +33,22 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Inicio</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Owners" asp-action="Index">Clientes</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Pais", "Index", "Countries")</li>
+                            <li>@Html.ActionLink("Estado", "Index", "States")</li>
+                            <li>@Html.ActionLink("Ciudad", "Index", "Cities")</li>
+                            <li>@Html.ActionLink("Municipios", "Index", "Neighborhoods")</li>
+                            <li>@Html.ActionLink("Clientes", "Index", "Owners")</li>
+                            <li>@Html.ActionLink("Articulos", "Index", "Articles")</li>
+                            <li>@Html.ActionLink("Marcas", "Index", "Brands")</li>
+                            <li>@Html.ActionLink("Clasificacion De Articulos", "Index", "ClassificationArts")</li>
+
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Preueba.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,11 +14,13 @@ namespace Prueba.Web.Models
 
         [Required]
         [Display(Name ="Tipo De Documento")]
-        public string TypeDocum{ get; set; }
+        public string TypeDocum { get; set; }
 
-        [Required]
-        [Display(Name ="Numero De Referencia")]
-        public string Document { get; set; }
+        //[Required]
+        //[Display(Name ="Numero De Referencia")]
+        //public string Document { get; set; }
+
+        public Owner Owners { get; set; }
 
     }
 }

@@ -24,6 +24,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.DireccionC)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeDocuments)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -41,6 +44,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DireccionC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeDocuments.TypeDocum)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.OwnerId">Edit</a> |

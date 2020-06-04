@@ -31,6 +31,8 @@ namespace Preueba.Web.Models
         public string NombreCompleto => $"{NombreC} {ApellidoC}";
 
 
-        public ICollection<TypeDocument> TypeDocuments { get; set; }
+        
+        public int IdDocumet { get; set; }
+        public TypeDocument TypeDocuments { get; set; }
     }
 }

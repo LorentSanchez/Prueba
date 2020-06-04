@@ -22,7 +22,8 @@ namespace Prueba.Web.Controllers
         // GET: Owners
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Owners.ToListAsync());
+            var dataContext = _context.Owners.Include(o => o.TypeDocuments);
+            return View(await dataContext.ToListAsync());
         }
 
         // GET: Owners/Details/5
@@ -34,6 +35,7 @@ namespace Prueba.Web.Controllers
             }
 
             var owner = await _context.Owners
+                .Include(o => o.TypeDocuments)
                 .FirstOrDefaultAsync(m => m.OwnerId == id);
             if (owner == null)
             {
@@ -46,6 +48,7 @@ namespace Prueba.Web.Controllers
         // GET: Owners/Create
         public IActionResult Create()
         {
+            ViewData["IdDocumet"] = new SelectList(_context.TypeDocument, "IdDocumet", "TypeDocum");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace Prueba.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OwnerId,NombreC,ApellidoC,TelefonC,DireccionC")] Owner owner)
+        public async Task<IActionResult> Create([Bind("OwnerId,NombreC,ApellidoC,TelefonC,DireccionC,IdDocumet")] Owner owner)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace Prueba.Web.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdDocumet"] = new SelectList(_context.TypeDocument, "IdDocumet", "TypeDocum", owner.IdDocumet);
             return View(owner);
         }
 
@@ -78,6 +82,7 @@ namespace Prueba.Web.Controllers
             {
                 return NotFound();
             }
+            ViewData["IdDocumet"] = new SelectList(_context.TypeDocument, "IdDocumet", "TypeDocum", owner.IdDocumet);
             return View(owner);
         }
 
@@ -86,7 +91,7 @@ namespace Prueba.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("OwnerId,NombreC,ApellidoC,TelefonC,DireccionC")] Owner owner)
+        public async Task<IActionResult> Edit(int id, [Bind("OwnerId,NombreC,ApellidoC,TelefonC,DireccionC,IdDocumet")] Owner owner)
         {
             if (id != owner.OwnerId)
             {
@@ -113,6 +118,7 @@ namespace Prueba.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdDocumet"] = new SelectList(_context.TypeDocument, "IdDocumet", "TypeDocum", owner.IdDocumet);
             return View(owner);
         }
 
@@ -125,6 +131,7 @@ namespace Prueba.Web.Controllers
             }
 
             var owner = await _context.Owners
+                .Include(o => o.TypeDocuments)
                 .FirstOrDefaultAsync(m => m.OwnerId == id);
             if (owner == null)
             {

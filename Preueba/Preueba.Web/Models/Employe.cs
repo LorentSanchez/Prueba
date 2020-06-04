@@ -15,5 +15,8 @@ namespace Prueba.Web.Models
         [Display(Name ="Nombre Del Empleado")]
         public string EmployeName { get; set; }
 
+        public int IdPuest { get; set; }
+
+        public PuestTra puests { get; set; }
     }
 }

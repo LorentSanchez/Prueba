@@ -13,5 +13,7 @@ namespace Prueba.Web.Models
         [Required]
         [Display(Name ="Estatud ")]
         public string StatusName { get; set; }
+
+        public int MyProperty { get; set; }
     }
 }

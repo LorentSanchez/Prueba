@@ -16,6 +16,7 @@ namespace Prueba.Web.Models
         public string NameArtc { get; set; }
 
 
-        public ICollection<Brand> Brands { get; set; }
+        public Articles Articles { get; set; }
+
     }
 }
